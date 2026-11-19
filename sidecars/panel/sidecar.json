@@ -1,0 +1,18 @@
+{
+  "command": "node",
+  "args": ["main.mjs"],
+  "restart_policy": "always",
+  "display_name": "Billion-Context 压缩监控",
+  "description": "查看 Billion-Context 实时压缩指标与控制后台",
+  "has_web_ui": true,
+  "ui_config": {
+    "display_name": "Billion-Context 压缩监控",
+    "views": [
+      {
+        "path": "/",
+        "entrypoint": "SIDECAR_UI_ENTRYPOINT_AUX_PANE",
+        "title": "Billion-Context"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "billion-context",
+  "displayName": "上下文智能压缩 (Billion-Context)",
+  "description": "Billion-Context 实时控制台与超长会话压缩监控看板，直观查看会话压缩比例与 Token 节省。",
+  "version": "1.0.0",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "打开 Billion-Context 控制看板",
+    "查看上下文智能压缩状态"
+  ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billion-Context 监控</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/preload.js"></script>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span class="title">Billion-Context</span>
+      <span id="status-pill" class="pill checking">检测中...</span>
+    </div>
+    <div class="actions">
+      <button id="btn-refresh" class="btn" title="刷新页面">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 4v6h-6M1 20v-6h6"/>
+          <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+        </svg>
+      </button>
+      <button id="btn-restart" class="btn" title="重启守护服务">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </button>
+      <button id="btn-external" class="btn" title="在外部浏览器打开">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="frame-container">
+    <iframe id="bili-frame" src="http://127.0.0.1:8787/__bili/" frameborder="0"></iframe>
+
+    <div id="offline-overlay" class="offline-overlay hidden">
+      <div class="offline-card">
+        <div class="offline-icon">⚠️</div>
+        <h3>Billion-Context 代理未运行</h3>
+        <p>本地服务端口 <code>8787</code> 未响应，智能上下文压缩当前处于离线状态。</p>
+        <div class="offline-actions">
+          <button id="btn-start" class="btn-primary">立即启动服务</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
