@@ -1,6 +1,9 @@
 {
   "command": "node",
-  "args": ["main.mjs"],
+  "args": ["--max-old-space-size=32", "--optimize-for-size", "main.mjs"],
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=32 --optimize-for-size"
+  },
   "restart_policy": "always",
   "display_name": "Billion-Context 压缩监控",
   "description": "查看 Billion-Context 实时压缩指标与控制后台",
